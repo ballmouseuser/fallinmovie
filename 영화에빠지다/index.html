@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fall in Movie</title>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+<link rel="shortcut icon" href="./img/shortcut.jpg">
+
+<script>
+	function mvMove(n) {
+		var offset = $("#mvMove" + n).offset();
+		$('html, body').animate({
+			scrollTop : offset.top
+		}, 400);
+	}
+	function showLoginPopup(){
+		window.open("./login.html","a","width=500, height=300, lift=100, top=50");
+	}
+	
+	function showJoinPopup(){
+		window.open("./join.html","a","width=530, height=500, lift=100, top=50");
+	}
+	function showMovie1(){
+		window.open("./movie1.html","a","width=1270, height=670, lift=100, top=50");
+	}
+	function showMovie2(){
+		window.open("./movie2.html","a","width=1270, height=670, lift=100, top=50");
+	}
+	function showMovie3(){
+		window.open("./movie3.html","a","width=1270, height=670, lift=100, top=50");
+	}
+	
+	function image_onclick(){
+		var arrImage=new Array("./chuimg/chu_1.jpg" ,"./chuimg/chu_2.jpg" ,"./chuimg/chu_3.jpg" ,"./chuimg/chu_4.jpg" ,"./chuimg/chu_5.jpg" ,"./chuimg/chu_6.jpg" ,"./chuimg/chu_7.jpg" ,"./chuimg/chu_8.jpg" ,"./chuimg/chu_9.jpg" ,"./chuimg/chu_10.jpg" ,"./chuimg/chu_11.jpg" ,);
+		var imgSource=document.targetImg;
+		var intRandom=Math.round(Math.random()*10);
+
+		while(imgSource.src.indexOf(arrImage[intRandom]) != -1){
+			intRandom=Math.round(Math.random()*10);
+		}
+		
+		imgSource.src=arrImage[intRandom];
+	}
+	
+	function showmap() { 
+		 if(document.all.spot1.style.visibility=="hidden") {
+		   document.all.spot1.style.visibility="visible";
+		   return false;
+		 }
+		 if(document.all.spot1.style.visibility=="visible") {
+		  document.all.spot1.style.visibility="hidden";
+		  return false;
+		 }
+		}
+	function showmap2() { 
+		 if(document.all.spot2.style.visibility=="hidden") {
+		   document.all.spot2.style.visibility="visible";
+		   return false;
+		 }
+		 if(document.all.spot2.style.visibility=="visible") {
+		  document.all.spot2.style.visibility="hidden";
+		  return false;
+		 }
+		}
+	function showmap3() { 
+		 if(document.all.spot3.style.visibility=="hidden") {
+		   document.all.spot3.style.visibility="visible";
+		   return false;
+		 }
+		 if(document.all.spot3.style.visibility=="visible") {
+		  document.all.spot3.style.visibility="hidden";
+		  return false;
+		 }
+		}
+
+</script>
+
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#navigation {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 80px;
+	width: 100%;
+	background: #000;
+	text-align: center;
+	font-size: 14px;
+}
+
+#navigation ul {
+	list-style: none;
+	margin-top: 50px;
+}
+
+#navigation li {
+	display: inline;
+	margin-right: 10px;
+}
+
+#navigation li a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+#navigation li a:hover {
+	color: #0F0;
+}
+
+#wrap {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 80px;
+}
+
+#mvMove1 {
+	background: salmon;
+	height: 1000px;
+}
+#mvMove2 {
+	background: RoyalBlue;
+	height: 1000px;
+}
+#mvMove3 {
+	background: Gold;
+	height: 1000px;
+}
+#mvMove4 {
+	background: black;
+	height: 1000px;
+}
+#mvMove1 img {
+	width: 27%;
+	margin: 50px;
+	cursor: pointer;
+}
+#mvMove2 img {
+	width: 28%;
+	margin: 50px;
+	cursor: pointer;
+}
+#mvMove3 img{
+	margin: auto;
+	width: 520px;
+	height: 630px;
+	cursor: pointer;
+}
+#mvMove4 img{
+	width:230px;
+	height:300px;
+}
+</style>
+
+</head>
+<body>
+	<div id="navigation">
+		<ul>
+			<li><a href="#" onclick="showLoginPopup();"> 로그인 </a></li> | 
+			<li><a href="#" onclick="showJoinPopup();"> 회원가입 </a></li> |
+			<li><a href="#" onclick="mvMove('1')"> 상영 영화 </a></li> |
+			<li><a href="#" onclick="mvMove('2')">개봉 예정</a></li> |
+			<li><a href="#" onclick="mvMove('4')"> 매거진 </a></li> |
+			<li><a href="#" onclick="mvMove('3')"> 랜덤 영화 뽑기 </a></li> |
+		</ul>
+	</div>
+
+	<div id="wrap">
+		<div id="mvMove1">
+			<br><br><br><br>
+			<h2 align="center">마우스로 이미지를 클릭하시면 상세정보를 볼 수 있습니다.</h2>
+			<a href="#" onclick="showmap(spot1);" title=""><img src="./sangimg/sang_1.jpg" alt=""></a>
+			<a href="#" onclick="showmap2(spot2);" title=""><img src="./sangimg/sang_2.jpg" alt=""></a>
+			<a href="#" onclick="showmap3(spot3);" title=""><img src="./sangimg/sang_3.jpg" alt=""></a>
+		</div>
+		
+		<div id="spot1" style="position:absolute; left:300px; top:500px; visibility:hidden;"> <!-- 레이어 팝업창 띄우기 -->
+		<img src="./sangimg/sang_jul_1.JPG" alt=""/>
+		</div>
+		<div id="spot2" style="position:absolute; left:800px; top:400px; visibility:hidden;">
+		<img src="./sangimg/sang_jul_2.JPG" alt=""/>
+		</div>
+		<div id="spot3" style="position:absolute; left:1200px; top:500px; visibility:hidden;">
+		<img src="./sangimg/sang_jul_3.JPG" alt=""/>
+		</div>
+		
+		<div id="mvMove2">
+			<br><br><br><br>
+			<h2 align="center">마우스로 이미지를 클릭하시면 예고편을 볼 수 있습니다.</h2>
+			<img src="./yeimg/ye_1.jpg" style="FLOAT: left;" onclick="showMovie1();"> <!-- 팝업 동영상 띄우기 -->
+			<img src="./yeimg/ye_2.jpg" style="FLOAT: left;" onclick="showMovie2();">
+			<img src="./yeimg/ye_3.jpg" style="FLOAT: left;" onclick="showMovie3();">
+		</div>
+		
+		<div id="mvMove4" align="center">
+		<br><br><br><br><br><br><br>
+		<table>
+		<tr><td><font color="white"><h2>영화 매거진</h2></font></td></tr>
+		</table>
+		<br><br>
+		<table id="mvTable">
+		<tr>
+		<td></td>
+		<td>
+		<a href="http://movie.daum.net/moviedb/main?movieId=108886" target="_blank">
+		<img src="./yeimg/ye_1.jpg" onmouseover="this.src='./yoimg/yo_1.jpg'" onmouseout="this.src='./yeimg/ye_1.jpg'" border="0"></a>
+		</td>
+		<td></td>
+		<td>
+		<a href="http://movie.daum.net/moviedb/main?movieId=113686" target="_blank">
+		<img src="./sangimg/sang_1.jpg" onmouseover="this.src='./yoimg/yo_2.jpg'" onmouseout="this.src='./sangimg/sang_1.jpg'" border="0"></a>
+		</td>
+		<td></td>
+		<td>
+		<a href="http://movie.daum.net/moviedb/main?movieId=108632" target="_blank">
+		<img src="./sangimg/sang_2.jpg" onmouseover="this.src='./yoimg/yo_3.jpg'" onmouseout="this.src='./sangimg/sang_2.jpg'" border="0"></a>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<a href="http://movie.daum.net/moviedb/main?movieId=110929" target="_blank">
+		<img src="./sangimg/sang_3.jpg" onmouseover="this.src='./yoimg/yo_4.jpg'" onmouseout="this.src='./sangimg/sang_3.jpg'" border="0"></a>
+		</td>
+		<td></td>
+		<td>
+		<a href="http://movie.daum.net/moviedb/main?movieId=98033" target="_blank">
+		<img src="./yeimg/ye_3.jpg" onmouseover="this.src='./yoimg/yo_5.jpg'" onmouseout="this.src='./yeimg/ye_3.jpg'" border="0"></a>
+		</td>
+		<td></td>
+		<td>
+		<a href="http://movie.daum.net/moviedb/main?movieId=118747" target="_blank">
+		<img src="./yeimg/ye_2.jpg" onmouseover="this.src='./yoimg/yo_6.jpg'" onmouseout="this.src='./yeimg/ye_2.jpg'" border="0"></a>
+		</td>
+		<td></td></tr></table>
+
+		</div>
+		
+		<div id="mvMove3">
+		<div align="center"><br><br><br><br>
+			<h1>영화 랜덤 뽑기</h1>
+		</div>
+			<ul>
+				<li align="center">
+					<br><br>
+					<img name="targetImg" src="./img/man.jpg" onclick="image_onclick()">
+					<br><br>
+					<h1>즐거운 감상 되세요 !</h1>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+	<footer>
+		<div id="footer" align="center">
+			<small>본 콘텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라
+				법적 책임을 질 수 있습니다. (MAKE.박근영, 정혜광)</small>
+		</div>
+	</footer>
+</body>
+</html>

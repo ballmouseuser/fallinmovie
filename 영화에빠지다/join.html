@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="./img/shortcut.jpg">
+</head>
+<body>
+<form name="input1" action="joincom.jsp" method="post">
+	<h1 align="center">회원 가입</h1>
+	<fieldset>
+	<table width="100%" cellpadding="5" cellspacing="1" border="1">
+	<tr>
+	<td width="30%" bgcolor="#cacaca"><font color="red">＊</font>아이디 </td><td><input type="text" name="id" size="20" required></td></tr>
+	<tr><td bgcolor="#cacaca"><font color="red">＊</font>비밀번호 </td><td><input type="password" name="pw" required></td>
+	<tr><td bgcolor="#cacaca"><font color="red">＊</font>비밀번호 확인 </td><td> <input type="password" name="pw1" required></td></tr>
+	<tr><td bgcolor="#cacaca"><font color="red">＊</font>이름</td><td><input type="text" name="name" required></td></tr>
+	<tr><td bgcolor="#cacaca">성별</td>
+	<td><input type="radio" name="sex" value="male" checked>남자
+	<input type="radio" name="sex" value="female">여자
+	<tr><td bgcolor="#cacaca">핸드폰번호</td>
+	<td><select>
+	<option value="">010</option>
+	<option value="">011</option>
+	<option value="">016</option>
+	<option value="">018</option>
+	<option value="">019</option>
+	</select>-<input type="text" size="3" maxlength="4" />-<input type="text" size="3" maxlength="4" />
+	</td></tr>
+	<tr>
+	<td width="30%" bgcolor="#cacaca">생년월일</td>
+	<td><input type="text" size="3" maxlength="4" placeholder="연도"/> 
+	<select>
+	<option value="">1월</option>
+	<option value="">2월</option>
+	<option value="">3월</option>
+	<option value="">4월</option>
+	<option value="">5월</option>
+	<option value="">6월</option>
+	<option value="">7월</option>
+	<option value="">8월</option>
+	<option value="">9월</option>
+	<option value="">10월</option>
+	<option value="">11월</option>
+	<option value="">12월</option>
+	</select>
+	<input type="text" size="2" maxlength="4" placeholder="일"/>
+	</td>
+	</tr>
+	</table>
+	<p/>
+	<input type="submit" value="완료">
+	<input type="reset" value="다시작성">
+	</fieldset>
+</form>
+</body>
+</html>
